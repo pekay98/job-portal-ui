@@ -709,11 +709,17 @@ const getRandomItems = (array, count) => {
 };
 const getRandomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
+// Scales every generated salary (including the minimum floor)
+const SALARY_MULTIPLIER = 1.5;
+
 const getRandomSalary = (category, level) => {
   const range = salaryRanges[category][level];
   const min = range.min + getRandomNumber(-10, 10);
   const max = range.max + getRandomNumber(-10, 10);
-  return { min: Math.max(min * 1000, 30000), max: max * 1000 };
+  return {
+    min: Math.round(Math.max(min * 1000, 30000) * SALARY_MULTIPLIER),
+    max: Math.round(max * 1000 * SALARY_MULTIPLIER),
+  };
 };
 
 // Generate comprehensive job data
