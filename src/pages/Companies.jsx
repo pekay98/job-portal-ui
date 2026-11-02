@@ -267,7 +267,7 @@ const Companies = () => {
             <Link
               key={company.name}
               to={`/companies/${company.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
-              className="group block bg-white dark:bg-gray-800 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 transform hover:scale-105 hover:-translate-y-2"
+              className="group block bg-gray-100 dark:bg-gray-800 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transform hover:scale-105 hover:-translate-y-2"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-center mb-6">
@@ -281,11 +281,11 @@ const Companies = () => {
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900/30 dark:to-purple-900/30 rounded-xl flex items-center justify-center text-2xl font-bold text-primary-600 dark:text-primary-400 hidden">
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-2xl font-bold text-gray-600 dark:text-gray-300 hidden">
                     {company.name.charAt(0)}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors mb-2">
                   {company.name}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{company.industry}</p>
@@ -317,7 +317,7 @@ const Companies = () => {
 
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-500 dark:text-gray-400">Open Jobs</span>
-                  <span className="font-semibold text-primary-600 dark:text-primary-400">
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">
                     {company.jobCount} positions
                   </span>
                 </div>
@@ -331,7 +331,7 @@ const Companies = () => {
                   <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">Locations</div>
                   <div className="flex flex-wrap gap-1">
                     {company.locations.slice(0, 3).map((location, idx) => (
-                      <span key={idx} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-lg text-xs">
+                      <span key={idx} className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-lg text-xs">
                         {location}
                       </span>
                     ))}
@@ -347,7 +347,7 @@ const Companies = () => {
               <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600 dark:text-gray-400">View Company</span>
-                  <svg className="w-4 h-4 text-primary-600 dark:text-primary-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>

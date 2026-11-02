@@ -382,13 +382,13 @@ const Jobs = () => {
           {paginatedJobs.map((job, index) => (
             <div
               key={job.id}
-              className="group bg-white dark:bg-gray-800 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600"
+              className="group bg-gray-100 dark:bg-gray-800 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between">
                 <div className="flex-1">
                   <div className="flex items-start space-x-4 mb-4">
-                    <div className="p-3 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="p-3 bg-white dark:bg-gray-700 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={job.companyLogo}
                         alt={`${job.company} logo`}
@@ -398,13 +398,13 @@ const Jobs = () => {
                           e.target.nextSibling.style.display = 'flex';
                         }}
                       />
-                      <div className="text-xl font-bold text-primary-600 dark:text-primary-400 hidden w-12 h-12 items-center justify-center">
+                      <div className="text-xl font-bold text-gray-600 dark:text-gray-300 hidden w-12 h-12 items-center justify-center">
                         {job.company.charAt(0)}
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <Link to={`/jobs/${job.id}`} className="block mb-2">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
                           {job.title}
                         </h3>
                       </Link>
@@ -424,26 +424,26 @@ const Jobs = () => {
                       <div className="flex flex-wrap gap-2 mb-4">
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                           job.workType === 'Remote' 
-                            ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+                            ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                             : job.workType === 'Hybrid'
-                            ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
-                            : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
+                            ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
+                            : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                         }`}>
                           {job.workType}
                         </span>
-                        <span className="bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300 px-3 py-1 rounded-full text-xs font-semibold">
+                        <span className="bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-semibold">
                           {job.category}
                         </span>
-                        <span className="bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold">
+                        <span className="bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-semibold">
                           {job.experienceLevel}
                         </span>
                         {job.featured && (
-                          <span className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-semibold">
+                          <span className="bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-semibold">
                             ⭐ Featured
                           </span>
                         )}
                         {job.urgent && (
-                          <span className="bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 px-3 py-1 rounded-full text-xs font-semibold">
+                          <span className="bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-semibold">
                             🔥 Urgent
                           </span>
                         )}
@@ -453,7 +453,7 @@ const Jobs = () => {
                 </div>
 
                 <div className="lg:text-right lg:ml-8">
-                  <div className="text-2xl font-black bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                  <div className="text-2xl font-black text-gray-800 dark:text-gray-100 mb-2">
                     {formatSalary(job.salary.min, job.salary.max)}
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">

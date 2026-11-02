@@ -153,7 +153,7 @@ const AppliedJobs = () => {
         )}
 
         {appliedJobs.length === 0 ? (
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/20 p-12 text-center">
+          <div className="bg-gray-100/90 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700/20 p-12 text-center">
             <div className="text-6xl mb-6">📄</div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">No Applications Yet</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
@@ -176,12 +176,12 @@ const AppliedJobs = () => {
               .map((job) => (
               <div
                 key={job.applicationId}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/20 p-8 hover:shadow-xl transition-all duration-300"
+                className="bg-gray-100/90 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700/20 p-8 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                   <div className="flex-1">
                     <div className="flex items-start space-x-6 mb-6">
-                      <div className="p-3 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl w-16 h-16 flex items-center justify-center">
+                      <div className="p-3 bg-white dark:bg-gray-700 rounded-2xl w-16 h-16 flex items-center justify-center">
                         <img
                           src={job.companyLogo}
                           alt={`${job.companyName || job.company} logo`}
@@ -191,7 +191,7 @@ const AppliedJobs = () => {
                             e.target.nextSibling.style.display = 'flex';
                           }}
                         />
-                        <div className="text-2xl font-bold text-primary-600 dark:text-primary-400 hidden w-12 h-12 items-center justify-center">
+                        <div className="text-2xl font-bold text-gray-600 dark:text-gray-300 hidden w-12 h-12 items-center justify-center">
                           {(job.companyName || job.company || 'C').charAt(0)}
                         </div>
                       </div>
@@ -199,7 +199,7 @@ const AppliedJobs = () => {
                         <div className="flex items-start justify-between mb-2">
                           <Link
                             to={`/jobs/${job.id}`}
-                            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                           >
                             {job.title}
                           </Link>
@@ -208,7 +208,7 @@ const AppliedJobs = () => {
                           </span>
                         </div>
                         <div className="flex flex-wrap items-center text-gray-600 dark:text-gray-400 space-x-4 mb-4">
-                          <span className="text-lg font-semibold text-primary-600 dark:text-primary-400">{job.companyName || job.company}</span>
+                          <span className="text-lg font-semibold text-gray-700 dark:text-gray-300">{job.companyName || job.company}</span>
                           <span>•</span>
                           <span className="flex items-center">
                             <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,17 +223,17 @@ const AppliedJobs = () => {
                         <div className="flex flex-wrap gap-2 mb-4">
                           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                             job.workType === 'Remote'
-                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+                              ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                               : job.workType === 'Hybrid'
-                              ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
-                              : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
+                              ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
+                              : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                           }`}>
                             {job.workType}
                           </span>
-                          <span className="bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300 px-3 py-1 rounded-full text-sm font-medium">
+                          <span className="bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">
                             {job.category}
                           </span>
-                          <span className="bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-medium">
+                          <span className="bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">
                             {job.experienceLevel}
                           </span>
                         </div>
@@ -244,7 +244,7 @@ const AppliedJobs = () => {
                     </div>
                   </div>
                   <div className="lg:ml-8 text-center lg:text-right">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                    <div className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                       {formatSalary(job.salaryMin, job.salaryMax)}
                     </div>
                     <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
