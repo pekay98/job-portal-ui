@@ -153,15 +153,15 @@ const JobsSection = () => {
             <Link
               key={job.id}
               to={`/jobs/${job.id}`}
-              className="group relative bg-white dark:bg-gray-800 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 cursor-pointer transform hover:scale-105 hover:-translate-y-2 block"
+              className="group relative bg-gray-100 dark:bg-gray-800 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 cursor-pointer transform hover:scale-105 hover:-translate-y-2 block"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Gradient border effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-purple-500 to-blue-500 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-500 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center">
-                    <div className="mr-4 p-3 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="mr-4 p-3 bg-white dark:bg-gray-700 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={job.companyLogo}
                         alt={`${job.company} logo`}
@@ -171,19 +171,19 @@ const JobsSection = () => {
                           e.target.nextSibling.style.display = 'flex';
                         }}
                       />
-                      <div className="text-xl font-bold text-primary-600 dark:text-primary-400 hidden w-12 h-12 items-center justify-center">
+                      <div className="text-xl font-bold text-gray-600 dark:text-gray-300 hidden w-12 h-12 items-center justify-center">
                         {job.company.charAt(0)}
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:bg-gradient-to-r group-hover:from-primary-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-all duration-300">
                         {job.title}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 font-semibold">{job.company}</p>
                     </div>
                   </div>
                   {job.workType === 'Remote' && (
-                    <span className="bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/50 dark:to-emerald-900/50 text-green-800 dark:text-green-200 text-xs font-bold px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700">
+                    <span className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 dark:border-gray-600">
                       🌍 Remote
                     </span>
                   )}
@@ -191,21 +191,21 @@ const JobsSection = () => {
 
                 <div className="flex items-center text-gray-600 dark:text-gray-400 mb-4 space-x-4">
                   <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <span className="font-medium">{job.location}</span>
                   </div>
                   <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="font-medium">{job.jobType}</span>
                   </div>
                 </div>
 
-                <div className="text-2xl font-black bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent mb-6">
+                <div className="text-2xl font-black text-gray-800 dark:text-gray-100 mb-6">
                   {formatSalary(job.salary.min, job.salary.max)}
                 </div>
 
@@ -213,7 +213,7 @@ const JobsSection = () => {
                   {job.skills && job.skills.slice(0, 3).map((skill, tagIndex) => (
                     <span
                       key={skill}
-                      className="bg-gradient-to-r from-primary-50 to-purple-50 dark:from-primary-900/30 dark:to-purple-900/30 text-primary-700 dark:text-primary-300 text-sm font-semibold px-4 py-2 rounded-xl border border-primary-200/50 dark:border-primary-700/50 hover:scale-105 transition-transform duration-200"
+                      className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold px-4 py-2 rounded-xl border border-gray-300/50 dark:border-gray-600/50 hover:scale-105 transition-transform duration-200"
                       style={{ animationDelay: `${(index + tagIndex) * 50}ms` }}
                     >
                       {skill}

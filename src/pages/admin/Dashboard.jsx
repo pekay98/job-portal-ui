@@ -21,9 +21,9 @@ const Dashboard = () => {
         </svg>
       ),
       link: '/admin/companies',
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-      textColor: 'text-blue-600 dark:text-blue-400',
+      color: 'from-gray-500 to-gray-600',
+      bgColor: 'bg-gray-200 dark:bg-gray-700',
+      textColor: 'text-gray-700 dark:text-gray-300',
       count: companies.length,
       countLabel: 'Total Companies'
     },
@@ -41,9 +41,9 @@ const Dashboard = () => {
         </svg>
       ),
       link: '/admin/employers',
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50 dark:bg-purple-900/20',
-      textColor: 'text-purple-600 dark:text-purple-400'
+      color: 'from-gray-500 to-gray-600',
+      bgColor: 'bg-gray-200 dark:bg-gray-700',
+      textColor: 'text-gray-700 dark:text-gray-300'
     },
     {
       title: 'Contact Messages',
@@ -59,9 +59,9 @@ const Dashboard = () => {
         </svg>
       ),
       link: '/admin/contact-messages',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50 dark:bg-green-900/20',
-      textColor: 'text-green-600 dark:text-green-400'
+      color: 'from-gray-500 to-gray-600',
+      bgColor: 'bg-gray-200 dark:bg-gray-700',
+      textColor: 'text-gray-700 dark:text-gray-300'
     }
   ];
 
@@ -84,7 +84,7 @@ const Dashboard = () => {
             <Link
               key={index}
               to={card.link}
-              className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="group bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <div className={`${card.bgColor} w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                 <div className={card.textColor}>
@@ -111,7 +111,7 @@ const Dashboard = () => {
                 </div>
               )}
 
-              <div className="flex items-center text-primary-600 dark:text-primary-400 mt-4 group-hover:translate-x-2 transition-transform">
+              <div className="flex items-center text-gray-700 dark:text-gray-300 mt-4 group-hover:translate-x-2 transition-transform">
                 <span className="text-sm font-semibold">Manage</span>
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

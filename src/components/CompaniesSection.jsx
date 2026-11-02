@@ -12,21 +12,6 @@ const CompaniesSection = () => {
     jobCount: jobs.filter(job => job.company === company.name).length
   }))
   
-  // Add gradient colors based on industry
-  const getGradient = (industry) => {
-    switch (industry) {
-      case 'Technology': return 'from-blue-500 to-purple-500'
-      case 'E-commerce': return 'from-orange-500 to-yellow-500'
-      case 'Automotive': return 'from-red-600 to-red-800'
-      case 'Entertainment': return 'from-red-600 to-pink-600'
-      case 'Music': return 'from-green-500 to-green-600'
-      case 'Travel': return 'from-pink-500 to-rose-500'
-      case 'Fintech': return 'from-purple-500 to-indigo-500'
-      case 'Cryptocurrency': return 'from-yellow-500 to-orange-500'
-      default: return 'from-gray-500 to-gray-600'
-    }
-  }
-
   return (
     <section className="relative py-24 bg-gradient-to-br from-white via-primary-50/30 to-purple-50/30 dark:from-gray-800 dark:via-gray-900 dark:to-purple-950/20 overflow-hidden">
       {/* Background Elements */}
@@ -61,14 +46,14 @@ const CompaniesSection = () => {
             <Link
               key={company.name}
               to={`/companies/${company.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
-              className="group relative bg-white dark:bg-gray-800 backdrop-blur-xl rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 transform hover:scale-105 hover:-translate-y-2 block"
+              className="group relative bg-gray-100 dark:bg-gray-800 backdrop-blur-xl rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transform hover:scale-105 hover:-translate-y-2 block"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Glassmorphism effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${getGradient(company.industry)} rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-500 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}></div>
               
               <div className="relative z-10">
-                <div className={`mb-6 p-4 bg-gradient-to-br ${getGradient(company.industry)} rounded-2xl inline-block transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
+                <div className={`mb-6 p-4 bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 rounded-2xl inline-block transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
                   <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 w-20 h-20 flex items-center justify-center">
                     <img
                       src={company.logo}
@@ -79,13 +64,13 @@ const CompaniesSection = () => {
                         e.target.nextSibling.style.display = 'flex';
                       }}
                     />
-                    <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 hidden w-full h-full items-center justify-center">
+                    <div className="text-3xl font-bold text-gray-600 dark:text-gray-300 hidden w-full h-full items-center justify-center">
                       {company.name.charAt(0)}
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-primary-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-all duration-300">
                   {company.name}
                 </h3>
 
@@ -96,7 +81,7 @@ const CompaniesSection = () => {
                 )}
 
                 <div className="text-gray-600 dark:text-gray-400 mb-4 font-semibold">
-                  <span className="text-2xl font-black bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">{company.jobCount}</span>
+                  <span className="text-2xl font-black text-gray-800 dark:text-gray-100">{company.jobCount}</span>
                   <div className="text-sm">open positions</div>
                 </div>
                 
@@ -122,7 +107,7 @@ const CompaniesSection = () => {
                   </span>
                 </div>
                 
-                <span className={`inline-block text-sm font-bold px-4 py-2 rounded-full bg-gradient-to-r ${getGradient(company.industry)} text-white shadow-lg transform group-hover:scale-105 transition-transform duration-300`}>
+                <span className={`inline-block text-sm font-bold px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow-sm transform group-hover:scale-105 transition-transform duration-300`}>
                   {company.industry}
                 </span>
               </div>
